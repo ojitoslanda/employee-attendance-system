@@ -33,6 +33,12 @@
 create database senai_asistencia;
 use senai_asistencia;
 
+
+create table cargo (
+id_cargo int auto_increment primary key,
+nombre_cargo varchar(50) not null
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 create table empleado(
 id_empleado int primary key auto_increment,
 nombre varchar(100) not null,
@@ -51,11 +57,6 @@ roles enum('admin', 'superadmin') default 'admin',
 nombre_usuario varchar (150) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-create table cargo (
-id_cargo int auto_increment primary key,
-nombre_cargo varchar(50) not null
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 create table asistencia(
 id_asistencia int auto_increment primary key,
 fecha date not null,
@@ -63,7 +64,7 @@ hora_entrada timestamp default current_timestamp not null,
 hora_salida timestamp default current_timestamp not null,
 estado enum('asistio', 'tardanza', 'falto') default 'falto' not null,
 id_empleado int not null,
-foreign key (id_empleado) references empleado(id_empleado) on delete cascade
+foreign key (id_empleado) references empleado(id_empleado)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 ```
 
