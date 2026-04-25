@@ -1,1 +1,4 @@
-<h1>Hola</h1>
+<?php 
+require_once 'views/auth/login.php';
+
+
