@@ -54,7 +54,8 @@ foreign key (id_cargo) references cargo(id_cargo)
 create table usuario(
 id_usuario int auto_increment primary key,
 roles enum('admin', 'superadmin') default 'admin',
-nombre_usuario varchar (150) not null
+nombre_usuario varchar (150) not null,
+clave varchar(250) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 create table asistencia(
@@ -72,7 +73,7 @@ foreign key (id_empleado) references empleado(id_empleado)
 
  
 ### Modelo Relacional (MR)
-![MODELO_RELACIONAL](https://raw.githubusercontent.com/ojitoslanda/testing/refs/heads/master/img/base_de_datos_asistencia_senai.png)
+![MODELO_RELACIONAL](https://raw.githubusercontent.com/ojitoslanda/testing/refs/heads/master/img/db.png)
 
 ### Cardinalidades
 
