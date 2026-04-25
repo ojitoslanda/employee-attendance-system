@@ -73,7 +73,7 @@ foreign key (id_empleado) references empleado(id_empleado)
 
  
 ### Modelo Relacional (MR)
-![MODELO_RELACIONAL](https://raw.githubusercontent.com/ojitoslanda/testing/refs/heads/master/img/base_de_datos_asistencia_senai.png)
+![MODELO_RELACIONAL](https://raw.githubusercontent.com/ojitoslanda/testing/refs/heads/master/img/db.png)
 
 ### Cardinalidades
 
