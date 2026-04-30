@@ -1,6 +1,6 @@
 # Sistema de Control de Asistencia de Empleados
 ### Employee Attendance System
-Aplicación web para el registro y gestión de asistencia del personal, desarrollada en **PHP puro con arquitectura MVC desde cero**, **Programación Orientada a Objetos (POO)** y **MariaDB** como base de datos.
+Aplicación web para el registro y gestión de asistencia del personal, desarrollada en **PHP puro con arquitectura MVC desde cero**, **Programación Orientada a Objetos (POO)**, **PDO** y **MariaDB** como base de datos.
 
 ## Tabla de Contenidos
 
