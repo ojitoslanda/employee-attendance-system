@@ -121,24 +121,12 @@ Desarrollar una aplicación web con **PHP + POO + MVC** que permita:
 
 El sistema aplica **POO** y **MVC** implementado desde cero. Los 4 pilares de POO en el proyecto:
 
-| Pilar | Aplicación en el proyecto |
-|---|---|
-| **Clases y Objetos** | Cada componente es una clase: `App`, `Router`, `Controller`, `Model`, `Employee`, `Attendance`, `Department` |
-| **Herencia** | `Controller.php` y `Model.php` son clases base. Todos los controllers y modelos heredan de ellas |
-| **Encapsulamiento** | Cada clase expone solo los métodos necesarios: `getAll()`, `findById()`, `save()`, `delete()` |
-| **Abstracción** | Las clases abstractas `Controller` y `Model` definen la interfaz común de todos los módulos |
-
 ### Flujo de una Petición
 
 
 ### Estructura del Proyecto
 
-```
-```
-
----
-
-## 🚀 Instalación
+## Instalación
 
 ### Requisitos previos
 - PHP 8+
