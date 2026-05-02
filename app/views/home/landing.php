@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../public/css/landing.css">
 </head>
 <body>
-
     <!-- Fade overlay para transición de botón Ver demo -->
     <div id="fadeOverlay"></div>
 
@@ -70,7 +69,6 @@
 
     <!-- Footer -->
     <?php include 'views/layouts/footer.php';?>
-
     <script src="../public/js/landing.js"></script>
 </body>
 </html>
