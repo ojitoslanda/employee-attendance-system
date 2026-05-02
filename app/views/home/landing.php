@@ -14,11 +14,7 @@
     <div id="fadeOverlay"></div>
 
     <!-- Menú móvil (overlay) fuera del nav para que position:fixed funcione siempre -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="close" id="closeMenu" aria-label="Cerrar menú">&times;</button>
-        <a href="login.php">Iniciar Sesión</a>
-        <a href="register.php">Registrarse</a>
-    </div>
+    <?php include 'views/layouts/header.php'; ?>
 
     <!-- Sección principal con video de fondo -->
     <section class="stage">
@@ -73,10 +69,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <span class="footer-brand">EMPRESA</span>
-        <span class="footer-copy">&copy; 2026 Todos los derechos reservados.</span>
-    </footer>
+    <?php include 'views/layouts/footer.php';?>
 
     <script src="../public/js/landing.js"></script>
 </body>
