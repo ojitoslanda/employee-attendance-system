@@ -181,15 +181,6 @@ Los archivos fuera de `public/` no son accesibles directamente por seguridad.
 
 ---
 
-## `sql/`
-
-| Archivo | Descripción |
-|---|---|
-| `schema.sql` | Script con todos los `CREATE TABLE`. Se ejecuta una vez para crear la base de datos |
-| `seeds.sql` | Script con datos de prueba (`INSERT INTO`). Útil para desarrollar sin cargar datos manualmente |
-
----
-
 ## Archivos raíz
 
 | Archivo | Descripción |

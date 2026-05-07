@@ -78,7 +78,6 @@ Desarrollar una aplicación web con **PHP + POO + MVC** que permita:
 - Módulo de asistencia: registro de entrada/salida e historial
 - Dashboard con resumen de asistencias del día
 - Layouts reutilizables (header, footer, navbar) — principio DRY
-- Base de datos con `schema.sql` y datos de prueba `seeds.sql`
 
 #### Fuera del alcance
 - Integración con dispositivos biométricos
@@ -92,9 +91,9 @@ Desarrollar una aplicación web con **PHP + POO + MVC** que permita:
 ## 4. Análisis de Requisitos
 
 ### 4.1 Requisitos Funcionales
-
+Falta
 ### 4.2 Requisitos No Funcionales
-
+Falta
 ## Stack Tecnológico
 
 | Capa | Tecnología |
@@ -120,7 +119,7 @@ El sistema aplica **POO** y **MVC** implementado desde cero. Los 4 pilares de PO
 
 ### Requisitos previos
 - PHP 8+
-- Apache con `mod_rewrite` habilitado (XAMPP recomendado)
+- Servidor web local o hosting
 - MariaDB / MySQL
 
 ### Pasos
@@ -142,6 +141,7 @@ cp .env.example .env
 ```
 
 ## TRELLO
+Falta integrar
 
 ### DIAGRAMA DE FIGMA UI/UX
 
@@ -187,6 +187,7 @@ foreign key (id_empleado) references empleado(id_empleado)
 ```
 
 ### Diagrama Entidad-Relacion (DER)
+Falta integrar
 
  
 ### Modelo Relacional (MR)
