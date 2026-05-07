@@ -1,19 +1,12 @@
-# Iniciar
+# Activamos el motor de reescritura de URLs
 RewriteEngine On
 
-# Redireccionar si entran a la raiz del proyecto
-RewriteRule ^$ app/index.php [L]
-
-# Si el archivo no existe físicamente
+# Si la petición es un archivo real (CSS, JS, imágenes, video), lo servimos directo.
+# Esto evita que el Router intente manejar los assets estáticos.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Primero intenta con .php
-RewriteRule ^([^\.]+)$ $1.php [NC,L]
-
-# Si no encontró .php, intenta con .html
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
-
-               
+# Todo lo demás lo redirigimos al punto de entrada de la aplicación (app/index.php).
+# $1 captura todo lo que hay en la URL y lo pasa como parámetro ?url=
+# QSA (Query String Append) preserva otros parámetros GET que puedan existir.
+RewriteRule ^(.*)$ app/index.php?url=$1 [QSA,L]

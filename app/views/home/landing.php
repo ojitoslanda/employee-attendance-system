@@ -6,20 +6,21 @@
     <title>Sistema de Asistencia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../public/css/landing.css">
+    <!-- Los assets usan rutas absolutas con BASE_URL para que funcionen sin importar la URL actual -->
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/landing.css">
 </head>
 <body>
     <!-- Fade overlay para transición de botón Ver demo -->
     <div id="fadeOverlay"></div>
 
     <!-- Menú móvil (overlay) fuera del nav para que position:fixed funcione siempre -->
-    <?php include 'views/layouts/header.php'; ?>
+    <?php include __DIR__ . '/../layouts/header.php'; ?>
 
     <!-- Sección principal con video de fondo -->
     <section class="stage">
 
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="../public/video/donde.mp4" type="video/mp4">
+            <source src="<?php echo BASE_URL; ?>/public/video/donde.mp4" type="video/mp4">
         </video>
 
         <!-- Navbar -->
@@ -49,7 +50,7 @@
 
         <div class="project-card">
             <div class="project-img-wrap">
-                <img src="../public/image/foto_prueba.png" alt="Registro con DNI" class="project-img">
+                <img src="<?php echo BASE_URL; ?>/public/image/foto_prueba.png" alt="Registro con DNI" class="project-img">
             </div>
             <h3 class="project-title">Registro de asistencia</h3>
             <p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam iure rerum odio voluptatum voluptas voluptatem obcaecati! Nostrum, unde temporibus.</p>
@@ -58,7 +59,7 @@
 
         <div class="project-card">
             <div class="project-img-wrap">
-                <img src="../public/image/foto_prueba.png" alt="Panel de Control" class="project-img project-img--admin">
+                <img src="<?php echo BASE_URL; ?>/public/image/foto_prueba.png" alt="Panel de Control" class="project-img project-img--admin">
             </div>
             <h3 class="project-title">Panel de Control</h3>
             <p class="project-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur excepturi aperiam nulla voluptatem officia eligendi voluptatum doloremque, maxime odio ratione sit architecto? Iste assumenda id, consectetur soluta vitae vero. Pariatur!</p>
@@ -68,7 +69,7 @@
     </section>
 
     <!-- Footer -->
-    <?php include 'views/layouts/footer.php';?>
-    <script src="../public/js/landing.js"></script>
+    <?php include __DIR__ . '/../layouts/footer.php'; ?>
+    <script src="<?php echo BASE_URL; ?>/public/js/landing.js"></script>
 </body>
 </html>
