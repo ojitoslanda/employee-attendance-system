@@ -32,8 +32,8 @@ class LoginController extends Controller {
                     // session_start() ya fue llamado en App.php, no hace falta repetirlo.
                     $_SESSION['usuario'] = $resultado;
 
-                    // Redirigimos al inicio. Cuando exista el dashboard, cambiar BASE_URL por BASE_URL . '/dashboard'
-                    header('Location: ' . BASE_URL);
+                    // Login correcto: redirigimos al dashboard
+                    header('Location: ' . BASE_URL . '/dashboard');
                     exit;
                 } else {
                     $error = "Usuario o contraseña incorrectos.";
