@@ -204,6 +204,26 @@ foreign key (id_empleado) references empleado(id_empleado)
 
 ### Cardinalidades
 
+Las cardinalidades describen cuántos registros de una tabla se relacionan con cuántos de otra.
+
+**cargo → empleado (1:N)**
+Un cargo puede estar asignado a muchos empleados.
+Un empleado solo puede tener un cargo.
+```
+cargo (1) -----< empleado (N)
+```
+
+**empleado → asistencia (1:N)**
+Un empleado puede tener muchos registros de asistencia (uno por día).
+Cada registro de asistencia pertenece a un solo empleado.
+```
+empleado (1) -----< asistencia (N)
+```
+
+**usuario**
+La tabla usuario es independiente. No se relaciona con empleado ni con asistencia.
+Representa las cuentas de acceso al sistema (administradores), no a los empleados.
+
 
 
 
