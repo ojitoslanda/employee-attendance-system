@@ -1,4 +1,4 @@
-// ─ MOBILE MENU ─
+// MOBILE MENU
 const menuBtn      = document.getElementById('menuBtn');
 const closeMenuBtn = document.getElementById('closeMenu');
 const mobileMenu   = document.getElementById('mobileMenu');
@@ -6,7 +6,7 @@ const mobileMenu   = document.getElementById('mobileMenu');
 menuBtn.addEventListener('click',      () => mobileMenu.classList.add('open'));
 closeMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('open'));
 
-// ── VER DEMO — fade overlay + scroll instantáneo ──
+//  VER DEMO  fade overlay + scroll instantáneo 
 document.getElementById('verDemo').addEventListener('click', () => {
     const overlay = document.getElementById('fadeOverlay');
     overlay.style.pointerEvents = 'auto';
@@ -23,7 +23,7 @@ document.getElementById('verDemo').addEventListener('click', () => {
     }, 450);
 });
 
-// ── NAVBAR + SCROLL INDICATOR — un solo listener ──
+//  NAVBAR + SCROLL INDICATOR - un solo listener para ambos, con toggle de clases para eficiencia y claridad 
 const navbar          = document.getElementById('navbar');
 const scrollIndicator = document.getElementById('scrollIndicator');
 
@@ -32,7 +32,7 @@ window.addEventListener('scroll', () => {
     scrollIndicator.classList.toggle('hidden', window.scrollY > 80);
 }, { passive: true });
 
-// ── ANIMACIONES AL HACER SCROLL — IntersectionObserver ──
+// ─ANIMACIONES AL HACER SCROLL  IntersectionObserver 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
