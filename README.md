@@ -2,16 +2,6 @@
 ### Employee Attendance System
 Aplicación web para el registro y gestión de asistencia del personal, desarrollada en **PHP puro con arquitectura MVC desde cero**, **Programación Orientada a Objetos (POO)**, **PDO** y **MariaDB** como base de datos.
 
-## Tabla de Contenidos
-
-- [Descripción del Negocio](#-1-descripción-del-negocio)
-- [Problema y Solución](#-2-problema-y-solución)
-- [Preanálisis](#-3-preanálisis)
-- [Análisis de Requisitos](#-4-análisis-de-requisitos)
-- [Stack Tecnológico](#-stack-tecnológico)
-- [Arquitectura del Proyecto](#-arquitectura-del-proyecto)
-- [Instalación](#-instalación)
-
 ## 1. Descripción del Negocio
 
 Las organizaciones modernas necesitan gestionar la asistencia de su personal de forma precisa y centralizada. Este sistema reemplaza los registros manuales en papel o planillas físicas, eliminando problemas como:
