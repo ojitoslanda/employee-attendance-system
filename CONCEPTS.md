@@ -197,9 +197,46 @@ Los archivos fuera de `public/` no son accesibles directamente por seguridad.
 | `.env` | Credenciales reales de la base de datos. **Nunca se sube a GitHub** |
 | `.env.example` | Plantilla del `.env` sin datos reales. Se sube a GitHub para que otros sepan qué variables configurar |
 | `.gitignore` | Lista de archivos que Git debe ignorar (ej: `.env`) |
-| `.htaccess` | Redirige todas las peticiones hacia `public/index.php` para que el Router funcione |
+| `.htaccess` | Intercepta todas las peticiones y las redirige a `app/index.php` para que el Router funcione |
 | `README.md` | Información principal del proyecto: descripción, instalación, tecnologías |
 | `CONCEPTS.md` | Este archivo. Explicación detallada de cada carpeta y archivo del proyecto |
+
+### ¿Qué hace el `.htaccess` exactamente?
+
+El `.htaccess` es un archivo de configuración que Apache lee en cada petición.
+Sin él, Apache intentaría buscar el archivo físico que coincida con la URL, y como no existe, mostraría un error o el listado de carpetas.
+
+El nuestro tiene dos reglas:
+
+**Regla 1: La raíz del proyecto**
+```
+RewriteRule ^$ app/index.php [L]
+```
+Cuando el usuario entra a `http://localhost/2026/employee-attendance-system/`, la URL no tiene nada después de la última barra. La regla `^$` detecta esa URL vacía y redirige directo a `app/index.php`.
+
+Esta regla no lleva condiciones porque la raíz ES una carpeta real y las condiciones `!-d` (no es carpeta) la bloquearían.
+
+**Regla 2: Todo lo demás**
+```
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ app/index.php?url=$1 [QSA,L]
+```
+Las dos condiciones dicen: "solo aplica esta regla si lo que se pide NO es un archivo real y NO es una carpeta real". Eso protege los assets (CSS, JS, imágenes) para que se sirvan directamente sin pasar por el Router.
+
+Si se cumple, captura todo lo que hay en la URL con `(.+)` y lo pasa como parámetro `?url=` a `app/index.php`.
+
+Ejemplo completo:
+```
+El usuario entra a:  /2026/employee-attendance-system/login
+"login" no es archivo ni carpeta real
+.htaccess redirige a: app/index.php?url=login
+Router lee ?url=login y despacha LoginController::index()
+```
+
+**Flags que usa la regla:**
+- `[L]` — Last: si esta regla se aplica, detiene el proceso y no sigue revisando más reglas
+- `[QSA]` — Query String Append: si la URL ya tenía parámetros GET, los conserva y agrega `url=` encima
 
 ---
 
