@@ -11,7 +11,7 @@
     <!-- Si el controlador encontró un error, lo mostramos aquí.
          htmlspecialchars() convierte caracteres peligrosos (< > " &) a texto plano
          para evitar que alguien inyecte código HTML o JavaScript malicioso. -->
-    <?php if($error): ?>
+    <?php if(isset($error) && $error): ?>
         <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
     <?php endif; ?>
 

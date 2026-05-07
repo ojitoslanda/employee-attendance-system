@@ -1,7 +1,13 @@
 <?php
 
+// El Router es el encargado de leer la URL del navegador y decidir
+// qué controlador y qué método ejecutar.
+// Es como un recepcionista: recibe la petición y la manda al área correcta.
+// Sin el Router, tendríamos que crear un archivo PHP por cada página del sistema.
 class Router {
 
+    // Este método se llama una sola vez al inicio de cada petición.
+    // Lee la URL, la analiza y ejecuta el controlador correspondiente.
     public function run(): void {
         // Leemos la URL que el .htaccess nos pasa como parámetro ?url=
         // Si no hay nada (raíz del proyecto), usamos cadena vacía.

@@ -1,7 +1,9 @@
 <?php
 
-// Clase base de la que heredarán todos los controladores del sistema.
-// Contiene funcionalidades comunes para no repetir código.
+// Controller es la clase base de la que heredan todos los controladores del sistema.
+// Al heredar de esta clase, cada controlador obtiene herramientas comunes
+// sin tener que escribirlas de nuevo. Por ejemplo, el método view() para cargar vistas.
+// Principio que aplica: DRY (Don't Repeat Yourself) — no repitas código.
 class Controller {
 
     // Carga una vista y le pasa datos desde el controlador.
