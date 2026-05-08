@@ -24,15 +24,15 @@
     <div class="sidebar-logo"><?php echo htmlspecialchars($usuario['nombre_usuario'] ?? 'Usuario'); ?></div>
     <ul>
         <li>
-            <a href="<?php echo BASE_URL; ?>/dashboard" 
-                class="<?php echo $rutaActual === 'dashboard' ? "activo" : ""; ?>" 
+            <a href="<?php echo BASE_URL; ?>/dashboard"
+                class="<?php echo $rutaActual === 'dashboard' ? 'activo' : ''   ; ?>" >
                 <i class="fa-solid fa-house"></i>
                 <span>Inicio</span>
             </a>
         </li>
         <li>
-            <a href="<?php echo BASE_URL; ?>/empleados" 
-                class="<?php echo $rutaActual === 'empleados' ? "activo" : ""; ?>" 
+            <a href="<?php echo BASE_URL; ?>/empleados"
+                class="<?php echo $rutaActual === 'empleados' ? 'activo' : ''; ?>"> 
                 <i class="fa-solid fa-clipboard-list"></i>
                 <span>Reportes</span>
             </a>
