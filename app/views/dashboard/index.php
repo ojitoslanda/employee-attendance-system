@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    
+
 <?php include __DIR__ . '/../layouts/sidebar.php'; ?>
 
 <!-- CONTENIDO PRINCIPAL -->
