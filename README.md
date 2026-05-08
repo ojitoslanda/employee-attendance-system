@@ -77,7 +77,7 @@ Desarrollar una aplicación web con **PHP + POO + MVC** que permita:
 - Módulo de departamentos: gestión de áreas
 - Módulo de asistencia: registro de entrada/salida e historial
 - Dashboard con resumen de asistencias del día
-- Layouts reutilizables (header, footer, navbar) — principio DRY
+- Layouts reutilizables (header, footer, navbar) — principio DRY -> DRY significa "Don't Repeat Yourself" (No te repitas). Es un principio de programación que dice: cada pieza de lógica o código debe existir en un solo lugar.
 
 #### Fuera del alcance
 - Integración con dispositivos biométricos
