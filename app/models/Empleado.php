@@ -16,8 +16,15 @@ class Empleado{
     }
     //Creamos el modulo para llamar todo los datos de la tabla EMPLEADOS
     //public function getAll():array
-    public function obtenerTodo():array{
-        
+    public function getAll():array {
+        // variable $sql para almacenar
+        $sql = "SELECT * FROM empleado";
+        // statement = declaración
+        $stmt = $this->db->prepare($sql);
+        // Ejecutamos la declaración ($stmt)
+        $stmt->execute();
+        //Retornamos los datos
+        return $stmt->fetchAll();
     }
 }
 
