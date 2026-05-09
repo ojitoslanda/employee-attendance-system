@@ -26,13 +26,22 @@
     </nav>
     <div class="main-content">
         <div class="table-responsive">
-            <?php print_r($empleados); ?>
+            <?php 
+                if(empty($empleados)){
+                    echo "<p>No hay registro</p>";
+                }
+                print_r($empleados); 
+            ?>
             <table class="table table-bordered text-center align-middle">
                 <thead class="table-dark">
                     <tr>
-                        <th>Columna 1</th>
-                        <th>Columna 2</th>
-                        <th>Columna 3</th>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>DNI</th>
+                        <th>Celular</th>
+                        <th>Correo</th>
+                        <th>Cargo</th>
                     </tr>
                 </thead>
                 <tbody>
