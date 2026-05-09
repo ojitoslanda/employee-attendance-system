@@ -7,7 +7,7 @@ class EmpleadosController extends Controller {
     public function index(): void {
         //Instanciamos el objeto de la clase EMPLEADO;
         $modelo = new Empleado();
-        $variable_empleados = $modelo->getAll();
+        $variable_empleados = $modelo->obtenerEmpleados();
         $this->view('empleados/reportes',[
             'usuario' => $_SESSION['usuario'],
             'empleados' =>$variable_empleados

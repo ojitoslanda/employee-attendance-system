@@ -16,7 +16,7 @@ class Empleado{
     }
     //Creamos el modulo para llamar todo los datos de la tabla EMPLEADOS
     //public function getAll():array
-    public function getAll():array {
+    public function obtenerEmpleados():array {
         // variable $sql para almacenar
         $sql = "SELECT * FROM empleado";
         // statement = declaración
