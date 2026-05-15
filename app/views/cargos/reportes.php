@@ -24,6 +24,7 @@
     </nav>
     <div class="main-content">
         <div class="table-responsive">
+            <h1>ESTO ES CARGO </h1>
         </div>
     </div>
 </main>

@@ -97,7 +97,7 @@ $rutaActual = explode('/', trim($_GET['url'] ?? 'dashboard', '/'))[0] ?: 'dashbo
 
         <!-- ================ START USUARIOS ================ -->
         <li>
-            <a href="#" class="<?php echo $rutaActual === 'usuario' ? 'activo' : ''; ?>">
+            <a href="<?php echo BASE_URL; ?>/usuarios" class="<?php echo $rutaActual === 'usuario' ? 'activo' : ''; ?>">
                 <i class="fa-solid fa-user-cog"></i>
                 <span>Usuarios</span>
             </a>
