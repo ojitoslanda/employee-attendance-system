@@ -34,15 +34,15 @@ $rutaActual = explode('/', trim($_GET['url'] ?? 'dashboard', '/'))[0] ?: 'dashbo
         <!-- ================ END DASHBOARD ================ -->
 
         <!-- ================ START EMPLEADOS ================ -->
-        <!-- 
-        Se agrega la clase "show" dinámicamente cuando la ruta actual es "empleados".
-        Esto permite mantener abierto el menú desplegable (dropdown) de empleados
-        para indicar visualmente en qué sección se encuentra el usuario.
-        Si la ruta no coincide, solo se aplica la clase normal "dropdown".
-        <li class="<?php //echo $rutaActual === 'empleados' ? 'dropdown show' : 'dropdown'; ?>">
+        <!-- Comentarios para alumnos:
+             - `$rutaActual` contiene el primer segmento de la URL (controlador).
+             - Si `$rutaActual === 'empleados'` añadimos la clase `dropdown show`
+               para mantener abierto el menú y `activo` para el enlace.
+             - El enlace de reporte apunta a `/empleados` (controlador) que
+               por defecto ejecuta `index()` o `reporte()` en el controlador.
         -->
-        <li class="<?php echo $rutaActual === 'empleados' ? 'dropdown show' : 'dropdown'; ?>" class="dropdown">
-            <a href="#" class="dropbtn" class="<?php echo $rutaActual === 'empleados' ? 'activo' : ''; ?>">
+        <li class="<?php echo $rutaActual === 'empleados' ? 'dropdown show' : 'dropdown'; ?>">
+            <a href="#" class="dropbtn <?php echo $rutaActual === 'empleados' ? 'activo' : ''; ?>">
                 <i class="fa-solid fa-clipboard-list"></i>
                 <span>Empleados</span>
                 <i class="fa-solid fa-chevron-down arrow"></i>
@@ -53,18 +53,54 @@ $rutaActual = explode('/', trim($_GET['url'] ?? 'dashboard', '/'))[0] ?: 'dashbo
                     <i class="fa-solid fa-users"></i>
                     Reporte
                 </a>
-                <a href="#">
+                <a href="<?php echo BASE_URL; ?>/empleados/registro">
                     <i class="fa-solid fa-edit"></i>
                     Registrar
                 </a>
             </div>
         </li>
         <!-- ================ END EMPLEADOS ================ -->
+        <!-- ================ END EMPLEADOS ================ -->
+
+        <!-- ================ START CARGOS ================ -->
+        <li class="<?php echo $rutaActual === 'cargos' ? 'dropdown show' : 'dropdown'; ?>">
+            <a href="#" class="dropbtn <?php echo $rutaActual === 'cargos' ? 'activo' : ''; ?>">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Cargos</span>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="<?php echo BASE_URL; ?>/cargos"
+                    class="<?php echo $rutaActual === 'cargos' ? 'activo' : ''; ?>">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    Reporte
+                </a>
+            </div>
+        </li>
+        <!-- ================ END CARGOS ================ -->
+
+        <!-- ================ START ASISTENCIA ================ -->
+        <li class="<?php echo $rutaActual === 'asistencias' ? 'dropdown show' : 'dropdown'; ?>">
+            <a href="#" class="dropbtn <?php echo $rutaActual === 'asistencias' ? 'activo' : ''; ?>">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Asistencia</span>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="<?php echo BASE_URL; ?>/asistencias"
+                    class="<?php echo $rutaActual === 'asistencias' ? 'activo' : ''; ?>">
+                    <i class="fa-solid fa-clock"></i>
+                    Reporte
+                </a>
+            </div>
+        </li>
+        <!-- ================ END ASISTENCIA ================ -->
+
 
         <!-- ================ START USUARIOS ================ -->
         <li>
             <a href="#" class="<?php echo $rutaActual === 'usuario' ? 'activo' : ''; ?>">
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user-cog"></i>
                 <span>Usuarios</span>
             </a>
         </li>
