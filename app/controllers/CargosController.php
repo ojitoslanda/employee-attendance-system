@@ -18,7 +18,6 @@ class CargosController extends Controller {
         'usuario' => $_SESSION['usuario'],
         ]);
     }
-
     public function reportes(): void {
         // Reutilizamos la implementación de reporte() para mantener DRY.
         $this->reporte();
