@@ -34,12 +34,11 @@ $rutaActual = explode('/', trim($_GET['url'] ?? 'dashboard', '/'))[0] ?: 'dashbo
         <!-- ================ END DASHBOARD ================ -->
 
         <!-- ================ START EMPLEADOS ================ -->
-        <!-- Comentarios para alumnos:
+        <!-- 
              - `$rutaActual` contiene el primer segmento de la URL (controlador).
              - Si `$rutaActual === 'empleados'` añadimos la clase `dropdown show`
                para mantener abierto el menú y `activo` para el enlace.
-             - El enlace de reporte apunta a `/empleados` (controlador) que
-               por defecto ejecuta `index()` o `reporte()` en el controlador.
+                - Si no, solo añadimos `dropdown` sin `show` ni `activo`.
         -->
         <li class="<?php echo $rutaActual === 'empleados' ? 'dropdown show' : 'dropdown'; ?>">
             <a href="#" class="dropbtn <?php echo $rutaActual === 'empleados' ? 'activo' : ''; ?>">
