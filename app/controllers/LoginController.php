@@ -8,6 +8,13 @@ class LoginController extends Controller {
 
     // El Router ejecuta "index" cuando la URL es solo "/login"
     public function index(): void {
+        // Si ya hay sesión activa, no tiene sentido mostrar el login.
+        // Redirigimos directo al dashboard.
+        if (isset($_SESSION['usuario'])) {
+            header('Location: ' . BASE_URL . '/dashboard');
+            exit;
+        }
+
         // Variable que guarda el error si las credenciales son incorrectas
         $error = null;
 
