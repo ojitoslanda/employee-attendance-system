@@ -39,7 +39,7 @@ class LoginController extends Controller {
                     $_SESSION['usuario'] = $resultado;
 
                     // Superadmin va al dashboard, admin va directo a asistencias.
-                    $destino = $resultado['rol'] === 'superadmin' ? '/dashboard' : '/asistencias';
+                    $destino = $resultado['roles'] === 'superadmin' ? '/dashboard' : '/dashboard';
                     header('Location: ' . BASE_URL . $destino);
                     exit;
                 } else {
