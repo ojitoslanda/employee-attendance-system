@@ -11,7 +11,8 @@ class LoginController extends Controller {
         // Si ya hay sesión activa, no tiene sentido mostrar el login.
         // Redirigimos directo al dashboard.
         if (isset($_SESSION['usuario'])) {
-            header('Location: ' . BASE_URL . '/dashboard');
+            $destino = $_SESSION['usuario']['rol'] === 'superadmin' ? '/dashboard' : '/asistencias';
+            header('Location: ' . BASE_URL . $destino);
             exit;
         }
 
@@ -35,12 +36,11 @@ class LoginController extends Controller {
                 $resultado = (new Login())->login($usuario, $clave);
 
                 if ($resultado) {
-                    // Guardamos los datos del usuario en la sesión.
-                    // session_start() ya fue llamado en App.php, no hace falta repetirlo.
                     $_SESSION['usuario'] = $resultado;
 
-                    // Login correcto: redirigimos al dashboard
-                    header('Location: ' . BASE_URL . '/dashboard');
+                    // Superadmin va al dashboard, admin va directo a asistencias.
+                    $destino = $resultado['rol'] === 'superadmin' ? '/dashboard' : '/asistencias';
+                    header('Location: ' . BASE_URL . $destino);
                     exit;
                 } else {
                     $error = "Usuario o contraseña incorrectos.";
