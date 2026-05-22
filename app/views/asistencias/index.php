@@ -37,8 +37,12 @@
                 autofocus
             >
         </div>
+        <div class="mensaje" id="mensaje">
+            <p id="msj"></p>
+        </div>        
     </div>
 
+    <script>let BASE_URL = '<?php echo BASE_URL; ?>'</script>
     <script src="<?php echo BASE_URL; ?>/public/js/asistencias-main.js"></script>
 </body>
 </html>
