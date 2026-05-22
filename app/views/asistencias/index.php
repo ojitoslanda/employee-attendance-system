@@ -26,9 +26,7 @@
 
     <!-- PANEL DERECHO -->
     <div class="panel-right">
-
         <div class="reloj" id="reloj">00:00:00</div>
-
         <div class="barcode-wrap">
             <i class="fa-solid fa-barcode barcode-icon"></i>
             <input
@@ -39,7 +37,6 @@
                 autofocus
             >
         </div>
-
     </div>
 
     <script src="<?php echo BASE_URL; ?>/public/js/asistencias-main.js"></script>
