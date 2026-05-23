@@ -39,8 +39,8 @@ class Empleado{
         $stmt = $this->db->prepare($sql);
         // Ejecutamos la declaración ($stmt)
         $stmt->execute([$dni]);
-        //Retornamos los datos
-        return $stmt->fetchAll();
+        //Retornamos los datos -- fetch -> devuelve 1 valor - 1 dato
+        return $stmt->fetch();
     }
 
 }
