@@ -38,10 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }).then(function(datos){
         console.log(datos) //sirve para los resultados en consola del navegador
         if(datos.encontrado){
-           console.log("EMPLEADO CORRECTO")
+            // console.log("EMPLEADO CORRECTO")
             name_employer.textContent = datos.empleado.nombre + " " + datos.empleado.apellido;
             registrarAsistenciaEmpleado(datos.empleado.id_empleado) //ESTE ES MI FUNCION PARA REGISTRAR              
-            msj.textContent = "Empleado encontrado"
         }else{
            //console.log("EMPLEADO NO ECONTRADO")
             name_employer.textContent = "Empleado no encontrado"
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Funcion para registrar el empleado, una vez consultado su DNI
   function registrarAsistenciaEmpleado(idEmpleado){
     //Enviamos los datos mediante ajax-fetch
-    fetch(BASE_URL + "/asistencias/registrar", {
+    fetch(BASE_URL + "/asistencias/registradito", {
         method: 'POST',
         headers: {'Content-Type':'application/x-www-form-urlencoded'},
         body: 'id_empleadito='+idEmpleado
@@ -62,6 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return respuesta.json(); 
     }).then(function(datos){
         console.log(datos) //sirve para los resultados en consola del navegador
+        if(datos.registrado){
+            msj.textContent = "Asistencia registrada correctamente"
+        }
     })
   }
 

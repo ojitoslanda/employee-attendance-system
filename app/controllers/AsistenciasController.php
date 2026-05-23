@@ -30,6 +30,15 @@ class AsistenciasController extends Controller {
         }
     }
 
+    public function registradito(): void{
+        require_once __DIR__ . '/../models/Asistencia.php'; //llamamos al models
+        $idEmpleado_variable = $_POST['id_empleadito']; //Almacenamos en un variable el DNI
+        $asistencia = new Asistencia(); //Instanciamos la clase o objeto
+        $resultado = $asistencia->registrar($idEmpleado_variable); 
+        header('Content-Type: application/json');
+        echo json_encode(['registrado'=>true]);
+    }
+
     // Reporte de asistencias: requiere sesión activa.
     // Ejemplo: /asistencias/reporte
     public function reporte(): void { //esto de aqui es un funcion reporte() pero yo estoy creando no se vincula con ningun archivo
