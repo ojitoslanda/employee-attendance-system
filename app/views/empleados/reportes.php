@@ -59,8 +59,9 @@
                                             <i class="fa-solid fa-pen"></i>
                                         </button>
 
-                                        <button class="btn-eliminar">
-                                            <i class="fa-solid fa-trash"></i>
+                                        <button  class="btn-eliminar"
+                                        data-id="<?php echo $empleaditos['id_empleado'] ?>" >
+                                        <i class="fa-solid fa-trash"></i>
                                         </button>
 
                                     </td>
@@ -73,6 +74,7 @@
         </div>
     </main>
     <script src="<?php echo BASE_URL; ?>/public/js/dashboard.js"></script>
+    <script src="<?php echo BASE_URL; ?>/public/js/empleados-main.js"></script>
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

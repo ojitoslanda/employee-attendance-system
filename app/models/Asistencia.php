@@ -11,7 +11,7 @@ class Asistencia
     public function registrar(int $id_empleado): void{
         // variable $sql para registrar datos  
         $sql = "INSERT INTO asistencia(fecha,hora_entrada,hora_salida,estado,id_empleado)
-                VALUES(CURDATE(), NOW(), null, 'asistio', ?)"; 
+        VALUES(CURDATE(), NOW(), null, 'asistio', ?)"; 
         // statement = declaración
         $stmt = $this->db->prepare($sql);
         // Ejecutamos la declaración ($stmt) - statement(sentencia, declaración) 
