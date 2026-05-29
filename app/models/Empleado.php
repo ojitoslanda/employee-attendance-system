@@ -42,6 +42,12 @@ class Empleado{
         //Retornamos los datos -- fetch -> devuelve 1 valor - 1 dato
         return $stmt->fetch();
     }
-
+    //Creamos un modulo para eliminar a un empleado por ID
+    public function eliminarPorIdEmpleado(String $codigo){
+        $sql = "DELETE FROM empleado WHERE id_empleado = ?"; 
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$codigo]);
+        return $stmt;
+    }
 }
 

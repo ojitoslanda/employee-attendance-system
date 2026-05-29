@@ -31,4 +31,8 @@ class EmpleadosController extends Controller {
         $this->reporte();
     }
 
+    public function eliminar_empleado():void{
+        $idEmpleado = $_POST['id_empleadito'];
+        echo "ID__" . $idEmpleado;
+    }
 }
