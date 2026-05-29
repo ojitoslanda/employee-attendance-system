@@ -182,7 +182,7 @@ hora_entrada timestamp default current_timestamp not null,
 hora_salida timestamp default current_timestamp not null,
 estado enum('asistio', 'tardanza', 'falto') default 'falto' not null,
 id_empleado int not null,
-foreign key (id_empleado) references empleado(id_empleado)
+foreign key (id_empleado) references empleado(id_empleado) ON DELETE CASCADE;
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 ```
 
