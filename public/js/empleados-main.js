@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
       //alert(id_empleadito);
       //UTILIZAMOS FETCH PARA ENVIAR EL ID AL BACK-END
     // =============== INICIO FETCH ===============
-        fetch(BASE_URL + "/asistencias/registradito", {
+        fetch(BASE_URL + "/empleados/eliminar_empleado", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: "id_empleadito=" + idEmpleado,
+            body: "id_empleadito=" + id_empleadito,
         }).then(function (respuesta) {
             return respuesta.json();
         }).then(function (datos) {
