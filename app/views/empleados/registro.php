@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/dashboard.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/botones.css">
 </head>
-
 <body>
     <?php include __DIR__ . '/../layouts/sidebar-dashboard.php'; ?>
 

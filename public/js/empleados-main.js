@@ -14,7 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }).then(function (respuesta) {
             return respuesta.json();
         }).then(function (datos) {
-            
+            if(datos.eliminar){
+                alert("Usuario eliminado correctamente...")
+                location.reload();
+            }else{
+                alert("Usuario no eliminado...")
+                location.reload();
+            }
         });
     // =============== FINAL FETCH ===============
     });

@@ -44,4 +44,16 @@ class EmpleadosController extends Controller {
             echo json_encode(['eliminar'=>false]);
         }
     } 
+
+
+    public function registro(): void {
+          if (!isset($_SESSION['usuario'])) {
+            header("Location: " . BASE_URL . "/login");
+            exit();
+        }
+         // Enviamos los datos a la vista.
+        $this->view('empleados/registro', [
+            'usuario' => $_SESSION['usuario'],
+        ]);
+    }
 }
