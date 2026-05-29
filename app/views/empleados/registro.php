@@ -46,6 +46,7 @@
                     </div>
                     <div class="form-group">
                         <label for="cargo">Cargo</label>
+                        
                         <input type="text" id="cargo" name="cargo" required>
                     </div>
                     <button type="submit" class="btn btn-primary">

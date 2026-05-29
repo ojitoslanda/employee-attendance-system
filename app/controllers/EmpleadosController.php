@@ -45,7 +45,7 @@ class EmpleadosController extends Controller {
         }
     } 
 
-
+    //EmpleadosController -> Mostrar la vista de REGISTRO+
     public function registro(): void {
           if (!isset($_SESSION['usuario'])) {
             header("Location: " . BASE_URL . "/login");
@@ -56,4 +56,19 @@ class EmpleadosController extends Controller {
             'usuario' => $_SESSION['usuario'],
         ]);
     }
+
+    public function guardar():void{
+        $nombre  =  $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $dni = $_POST['dni'];
+        $celular = $_POST['celular'];
+        $correo = $_POST['correo'];
+        $cargo = '';
+        echo $nombre."<br>";
+        echo $apellido."<br>";
+        echo $dni."<br>";
+        echo $celular."<br>";
+        echo $correo."<br>";
+    }
+    
 }
