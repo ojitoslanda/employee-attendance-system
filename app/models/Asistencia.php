@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/../core/Database.php';
+date_default_timezone_set('America/Los_Angeles');
+
 class Asistencia
 {
     private PDO $db;
