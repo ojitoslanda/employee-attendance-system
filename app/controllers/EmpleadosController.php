@@ -47,13 +47,18 @@ class EmpleadosController extends Controller {
 
     //EmpleadosController -> Mostrar la vista de REGISTRO+
     public function registro(): void {
-          if (!isset($_SESSION['usuario'])) {
+        require_once __DIR__ . '/../models/Cargo.php';
+        if (!isset($_SESSION['usuario'])) {
             header("Location: " . BASE_URL . "/login");
             exit();
         }
-         // Enviamos los datos a la vista.
+        //Instanciar el objeto del MODELO CARGO
+        $cargo = new Cargo();
+        $variable_cargo = $cargo->obtenerCargos();
+        // Enviamos los datos a la vista.
         $this->view('empleados/registro', [
             'usuario' => $_SESSION['usuario'],
+            'lista_cargo' => $variable_cargo
         ]);
     }
 

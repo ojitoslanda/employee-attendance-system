@@ -46,8 +46,13 @@
                     </div>
                     <div class="form-group">
                         <label for="cargo">Cargo</label>
-                        
-                        <input type="text" id="cargo" name="cargo" required>
+                        <select name="cargo"> 
+                            <?php foreach ($lista_cargo as $cargitos): ?>
+                                    <option value="<?php echo ($cargitos['id_cargo']) ?>">
+                                        <?php echo ($cargitos['nombre_cargo']); ?>
+                                    </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">
                         <i class="fa-solid fa-floppy-disk"></i>
