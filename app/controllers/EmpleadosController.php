@@ -32,7 +32,16 @@ class EmpleadosController extends Controller {
     }
 
     public function eliminar_empleado():void{
+        require_once __DIR__ . '/../models/Empleado.php'; //llamamos al models
         $idEmpleado = $_POST['id_empleadito'];
-        echo "ID__" . $idEmpleado;
-    }
+        $empleado = new Empleado(); //Instanciamos la clase o objeto
+        $resultado = $empleado->eliminarPorIdEmpleado($idEmpleado); 
+        //echo "ID__" . $idEmpleado;
+        header('Content-Type: application/json');
+        if($resultado){ //Si es verdadero, ejecuta esto
+            echo json_encode(['eliminar'=>true]);
+        }else{ //Si es falso, ejectura esto
+            echo json_encode(['eliminar'=>false]);
+        }
+    } 
 }

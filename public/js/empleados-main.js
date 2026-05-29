@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }).then(function (respuesta) {
             return respuesta.json();
         }).then(function (datos) {
-
+            
         });
     // =============== FINAL FETCH ===============
     });

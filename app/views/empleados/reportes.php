@@ -73,6 +73,11 @@
             </div>
         </div>
     </main>
+
+    <script> 
+        let BASE_URL = '<?php echo BASE_URL; ?>' 
+    </script>
+
     <script src="<?php echo BASE_URL; ?>/public/js/dashboard.js"></script>
     <script src="<?php echo BASE_URL; ?>/public/js/empleados-main.js"></script>
     <!-- Bootstrap JS Bundle -->
