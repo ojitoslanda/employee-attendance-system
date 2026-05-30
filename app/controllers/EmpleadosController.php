@@ -75,10 +75,10 @@ class EmpleadosController extends Controller {
         //Instanciar o crear el objeto
         $empleado = new Empleado();
         $resultado = $empleado->guardarEmpleados($datos);
-        if($resultado){  //si es Verdadero
+        if($resultado['ok'] == false){  //si es Verdadero
             header('Location: '. BASE_URL .'/empleados/reporte');
         }else{
-            header('Location: '. BASE_URL .'/empleados/registro?msj=error');
+            header('Location: '. BASE_URL .'/empleados/registro');
         }
     }
     

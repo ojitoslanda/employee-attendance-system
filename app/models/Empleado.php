@@ -52,6 +52,26 @@ class Empleado{
 
     //Creamos un modulo para guardar empleados
     public function guardarEmpleados(array $datos):array{
+        //Validar DNI unico
+         $sql1 = "SELECT id_empleado 
+                 FROM empleado
+                 WHERE dni = :dni";    
+        $stmt = $this->db->prepare($sql1);
+        $stmt->execute(['dni' => $datos['dni']]);
+        if($stmt->fetch()){
+            return ['ok' => false, 'mensaje' => 'Ya existe un empleado con ese DNI'];
+        }
+        //Validar Correo Unico
+        $sql2 = "SELECT id_empleado 
+                 FROM empleado
+                 WHERE correo = :correo";    
+        $stmt = $this->db->prepare($sql2);
+        $stmt->execute(['correo' => $datos['correo']]);
+        if($stmt->fetch()){
+            return ['ok' => false, 'mensaje' => 'Ya existe un empleado con ese Correo'];
+        }
+
+        //INSERTAMOS LOS DATOS
         $sql = "INSERT INTO empleado
                 (nombre,apellido,dni,celular,correo,id_cargo)
                 VALUES(:n,:a,:d,:ce,:co,:i_c)";    
@@ -64,7 +84,7 @@ class Empleado{
             'co' => $datos['correo'] ,
             'i_c' => $datos['id_cargo']
         ]);
-        return $stmt; 
+        return ['ok'=>true,'mensaje'=>'Empleado Registrado']; 
     }
 
 }
