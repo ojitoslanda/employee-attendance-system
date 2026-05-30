@@ -49,5 +49,23 @@ class Empleado{
         $stmt->execute([$codigo]);
         return $stmt;
     }
+
+    //Creamos un modulo para guardar empleados
+    public function guardarEmpleados(array $datos):array{
+        $sql = "INSERT INTO empleado
+                (nombre,apellido,dni,celular,correo,id_cargo)
+                VALUES(:n,:a,:d,:ce,:co,:i_c)";    
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([
+            'n'  =>  $datos['nombre'],
+            'a' => $datos['apellido'],
+            'd' => $datos['dni'],
+            'ce' => $datos['celular'],
+            'co' => $datos['correo'] ,
+            'i_c' => $datos['id_cargo']
+        ]);
+        return $stmt; 
+    }
+
 }
 

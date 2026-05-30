@@ -63,17 +63,23 @@ class EmpleadosController extends Controller {
     }
 
     public function guardar():void{
-        $nombre  =  $_POST['nombre'];
-        $apellido = $_POST['apellido'];
-        $dni = $_POST['dni'];
-        $celular = $_POST['celular'];
-        $correo = $_POST['correo'];
-        $cargo = '';
-        echo $nombre."<br>";
-        echo $apellido."<br>";
-        echo $dni."<br>";
-        echo $celular."<br>";
-        echo $correo."<br>";
+        //Preparar o convertir los datos en array
+        $datos = [
+            'nombre'  =>  $_POST['nombre'],
+            'apellido' => $_POST['apellido'],
+            'dni' => $_POST['dni'],
+            'celular' => $_POST['celular'],
+            'correo' => $_POST['correo'],
+            'id_cargo' => $_POST['cargo']
+        ];
+        //Instanciar o crear el objeto
+        $empleado = new Empleado();
+        $resultado = $empleado->guardarEmpleados($datos);
+        if($resultado){  //si es Verdadero
+            header('Location: '. BASE_URL .'/empleados/reporte');
+        }else{
+            header('Location: '. BASE_URL .'/empleados/registro?msj=error');
+        }
     }
     
 }
