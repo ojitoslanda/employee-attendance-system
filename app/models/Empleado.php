@@ -56,18 +56,18 @@ class Empleado{
          $sql1 = "SELECT id_empleado 
                  FROM empleado
                  WHERE dni = :dni";    
-        $stmt = $this->db->prepare($sql1);
-        $stmt->execute(['dni' => $datos['dni']]);
-        if($stmt->fetch()){
+        $stmt1 = $this->db->prepare($sql1);
+        $stmt1->execute(['dni' => $datos['dni']]);
+        if($stmt1->fetch()){
             return ['ok' => false, 'mensaje' => 'Ya existe un empleado con ese DNI'];
         }
         //Validar Correo Unico
         $sql2 = "SELECT id_empleado 
                  FROM empleado
                  WHERE correo = :correo";    
-        $stmt = $this->db->prepare($sql2);
-        $stmt->execute(['correo' => $datos['correo']]);
-        if($stmt->fetch()){
+        $stmt2 = $this->db->prepare($sql2);
+        $stmt2->execute(['correo' => $datos['correo']]);
+        if($stmt2->fetch()){
             return ['ok' => false, 'mensaje' => 'Ya existe un empleado con ese Correo'];
         }
 
