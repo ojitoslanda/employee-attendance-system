@@ -50,20 +50,20 @@
 
         <div class="project-card">
             <div class="project-img-wrap">
-                <img src="<?php echo BASE_URL; ?>/public/image/foto_prueba.png" alt="Registro con DNI" class="project-img">
+                <img src="<?php echo BASE_URL; ?>/public/image/registro_asistencia.jpg" alt="Registro con DNI" class="project-img">
             </div>
             <h3 class="project-title">Registro de asistencia</h3>
-            <p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam iure rerum odio voluptatum voluptas voluptatem obcaecati! Nostrum, unde temporibus.</p>
-            <a href="#" class="project-link">Ver demo <i class="bi bi-arrow-right"></i></a>
+            <p class="project-desc">Registra la asistencia de empleados de forma rápida mediante su DNI. Consulta, filtra y exporta reportes de asistencia en tiempo real.</p>
+            <a href="<?php echo BASE_URL; ?>/asistencias" class="project-link">Ver demo <i class="bi bi-arrow-right"></i></a>
         </div>
 
         <div class="project-card">
             <div class="project-img-wrap">
-                <img src="<?php echo BASE_URL; ?>/public/image/foto_prueba.png" alt="Panel de Control" class="project-img project-img--admin">
+                <img src="<?php echo BASE_URL; ?>/public/image/panel_principal.jpg" alt="Panel de Control" class="project-img project-img--admin">
             </div>
             <h3 class="project-title">Panel de Control</h3>
-            <p class="project-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur excepturi aperiam nulla voluptatem officia eligendi voluptatum doloremque, maxime odio ratione sit architecto? Iste assumenda id, consectetur soluta vitae vero. Pariatur!</p>
-            <a href="#" class="project-link">Ver demo <i class="bi bi-arrow-right"></i></a>
+            <p class="project-desc">Administra empleados, cargos y usuarios desde un panel centralizado. Visualiza estadísticas del sistema y gestiona todos los accesos de forma segura.</p>
+            <a href="<?php echo BASE_URL; ?>/dashboard" class="project-link">Ver demo <i class="bi bi-arrow-right"></i></a>
         </div>
 
     </section>

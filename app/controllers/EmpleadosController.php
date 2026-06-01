@@ -20,10 +20,15 @@ class EmpleadosController extends Controller {
         $modelo = new Empleado();
         $variable_empleados = $modelo->obtenerEmpleados();
 
+        require_once __DIR__ . '/../models/Cargo.php';
+        $cargo = new Cargo();
+        $variable_cargo = $cargo->obtenerCargos();
+
         // Enviamos los datos a la vista.
         $this->view('empleados/reportes', [
-            'usuario' => $_SESSION['usuario'],
-            'empleados' => $variable_empleados
+            'usuario'     => $_SESSION['usuario'],
+            'empleados'   => $variable_empleados,
+            'lista_cargo' => $variable_cargo
         ]);
     }
 
@@ -60,6 +65,22 @@ class EmpleadosController extends Controller {
             'usuario' => $_SESSION['usuario'],
             'lista_cargo' => $variable_cargo
         ]);
+    }
+
+    public function editar_empleado(): void {
+        $datos = [
+            'id_empleado' => $_POST['id_empleado'],
+            'nombre'      => $_POST['nombre'],
+            'apellido'    => $_POST['apellido'],
+            'dni'         => $_POST['dni'],
+            'celular'     => $_POST['celular'],
+            'correo'      => $_POST['correo'],
+            'id_cargo'    => $_POST['id_cargo']
+        ];
+        $empleado = new Empleado();
+        $resultado = $empleado->editarEmpleado($datos);
+        header('Content-Type: application/json');
+        echo json_encode($resultado);
     }
 
     public function guardar():void{

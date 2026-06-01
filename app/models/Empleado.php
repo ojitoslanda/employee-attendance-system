@@ -84,7 +84,36 @@ class Empleado{
             'co' => $datos['correo'] ,
             'i_c' => $datos['id_cargo']
         ]);
-        return ['ok'=>true,'mensaje'=>'Empleado Registrado']; 
+        return ['ok'=>true,'mensaje'=>'Empleado Registrado'];
+    }
+
+    public function editarEmpleado(array $datos): array {
+        $sql1 = "SELECT id_empleado FROM empleado WHERE dni = :dni AND id_empleado != :id";
+        $stmt1 = $this->db->prepare($sql1);
+        $stmt1->execute(['dni' => $datos['dni'], 'id' => $datos['id_empleado']]);
+        if ($stmt1->fetch()) {
+            return ['ok' => false, 'mensaje' => 'Ya existe otro empleado con ese DNI'];
+        }
+
+        $sql2 = "SELECT id_empleado FROM empleado WHERE correo = :correo AND id_empleado != :id";
+        $stmt2 = $this->db->prepare($sql2);
+        $stmt2->execute(['correo' => $datos['correo'], 'id' => $datos['id_empleado']]);
+        if ($stmt2->fetch()) {
+            return ['ok' => false, 'mensaje' => 'Ya existe otro empleado con ese Correo'];
+        }
+
+        $sql = "UPDATE empleado SET nombre=:n, apellido=:a, dni=:d, celular=:ce, correo=:co, id_cargo=:i_c WHERE id_empleado=:id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([
+            'n'   => $datos['nombre'],
+            'a'   => $datos['apellido'],
+            'd'   => $datos['dni'],
+            'ce'  => $datos['celular'],
+            'co'  => $datos['correo'],
+            'i_c' => $datos['id_cargo'],
+            'id'  => $datos['id_empleado']
+        ]);
+        return ['ok' => true, 'mensaje' => 'Empleado actualizado'];
     }
 
 }
